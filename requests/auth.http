@@ -3,9 +3,9 @@ POST  http://localhost:3000/auth/register
 Content-Type: application/json
 
 {
-    "firstName" : "a",
-    "lastName": "b",
-    "username": "mahboobe",
+    "firstName" : "ali",
+    "lastName": "mamoudi",
+    "username": "alim",
     "password": "123456"
 }
 

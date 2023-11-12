@@ -5,7 +5,14 @@ class UserController {
     const { query } = req.body;
     const users = await UserModel.find(
       {
-        username: new RegExp(`${query}`, "i"),
+        $or: [
+          {
+            first_name: new RegExp(`${query}`, "i"),
+          },
+          {
+            last_name: new RegExp(`${query}`, "i"),
+          },
+        ],
       },
       { password: 0, __v: 0, createdAt: 0, updatedAt: 0 }
     );
