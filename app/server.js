@@ -13,7 +13,7 @@ module.exports = class Application {
 
   configApplication() {
     this.#app.use(this.#express.json());
-    this.#app.use(this.#express.urlencoded());
+    this.#app.use(this.#express.urlencoded({ extended: true }));
   }
 
   createServer(PORT) {
