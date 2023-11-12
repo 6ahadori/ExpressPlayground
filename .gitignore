@@ -12,5 +12,16 @@ coverage
 # Benchmarking
 benchmarks/graphs
 
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+# Thumbnails
+._*
+
 # ignore additional files using core.excludesFile
 # https://git-scm.com/docs/gitignore
