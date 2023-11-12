@@ -4,6 +4,7 @@ const { loginValidator } = require("../http/validations/auth");
 const { expressValidatorMapper } = require("../http/middlewares/checkErrors");
 
 const router = require("express").Router();
+
 router.post(
   "/register",
   registerValidator(),
@@ -16,6 +17,7 @@ router.post(
   expressValidatorMapper,
   AuthContorller.login
 );
+
 module.exports = {
   authRoutes: router,
 };

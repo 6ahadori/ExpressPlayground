@@ -1,5 +1,5 @@
 const { validationResult } = require("express-validator");
-const { hashString, tokenGenerator } = require("../../modules/functions");
+const { hashString, generateToken } = require("../../modules/functions");
 const { UserModel } = require("../../models/user");
 const bcrypt = require("bcrypt");
 
@@ -39,7 +39,7 @@ class AuthContorller {
       return res.status(200).json({
         status: res.statusCode,
         success: true,
-        token: tokenGenerator(username),
+        token: generateToken(username),
       });
     } catch (error) {
       next(error);

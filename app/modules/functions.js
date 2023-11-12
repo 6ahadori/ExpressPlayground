@@ -6,11 +6,22 @@ function hashString(value) {
   return bcrypt.hashSync(value, salt);
 }
 
-function tokenGenerator(payload) {
+function generateToken(payload) {
   return jwt.sign(payload, process.env.SECRET_KEY);
+}
+
+function verifyToken(token) {
+  try {
+    const result = jwt.verify(token, process.env.SECRET_KEY);
+    if (!result) throw { status: 401, message: "user is unauthorized." };
+    return result;
+  } catch (error) {
+    throw { status: 401, message: "user is unauthorized." };
+  }
 }
 
 module.exports = {
   hashString,
-  tokenGenerator,
+  generateToken,
+  verifyToken,
 };
